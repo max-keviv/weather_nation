@@ -1,0 +1,32 @@
+.inside
+{
+    margin: 100px;
+
+}
+.top
+{
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.inside{
+margin: 7% 0 0 30%;
+}
+.place
+{
+    margin: 0 0 0 50px;
+}
+.search{
+    margin: 2px 0 0 100px;
+} 
+footer{
+    text-align: center;
+    margin: 5% 9% 0 0;
+}
+hr{
+    width: 30%;
+
+}

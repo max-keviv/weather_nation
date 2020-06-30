@@ -1,12 +1,19 @@
+////////////REQUESTING MODULE///////////////
+
 const express=require("express");
-
-const https=require("https");
-const { json } = require("express");
 const app=express();
-
 const bodyParser=require("body-parser");
-app.use(bodyParser.urlencoded({extended: true}));
+// const request=require("request");
+const https=require("https");
 
+            ///////////////////////////
+                // use of module
+// app.use(express.static("public"));
+
+app.use("/", express.static(__dirname));//working
+app.use(bodyParser.urlencoded({extended:true}));
+
+        ////////////******** get response**********///////////
 var weathers=new Object();
 app.get("/",function(req,res){
    
@@ -23,11 +30,10 @@ const url="https://api.openweathermap.org/data/2.5/weather?q="+pl+"&units=metric
 
 https.get(url,function(response){
     console.log(response.statusCode);
-    if(response.statusCode==404)
+    if(response.statusCode!=200)
     {
         console.log("error");
-        res.write("<h1>wrong credentials</h1><p>Data not found<br><i>try somethings else<i/></p>");
-        res.send();
+        res.sendFile(__dirname+"/failure.html");
     }
     else
     {
@@ -40,12 +46,17 @@ https.get(url,function(response){
         const icon=weathers.weather[0].icon
         const des=weathers.weather[0].main
         const main=JSON.stringify(weathers.main);
-
         const img_url='http://openweathermap.org/img/wn/'+icon+'@4x.png'
-    res.write("<h1>wether forcast at "+pl+" </h1>") 
-    res.write(main);
+    res.write("<h1>weather forcast at "+pl+" </h1>") 
+    var arr=main.split(",");
+
     res.write("<h3><i> the temp. is  "+temp+" c </i></h3>");
-    res.write("<h3><i> the weather is like " +des+" enjoy </i></h3>");
+    for(var i=1;i<arr.length;i++)
+    {
+        res.write("<h4><i>"+arr[i]+"</i></h4>");
+        
+    }
+    res.write("<h3><i> the weather is like " +des+" </i></h3>");
     res.write("<img src="+img_url+">");
      res.send();
     })
@@ -55,6 +66,10 @@ https.get(url,function(response){
 })
 
 
-app.listen(process.env.PORT || 3000,function(){
+app.post("/failure",function(req,res){
+    res.redirect("/");
+})
+
+app.listen(process.env.PORT ||2000,function(){
 console.log("server at port 3000");
 });

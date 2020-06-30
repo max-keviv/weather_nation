@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="index.css">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+                 <!-- /////////////*******////////// -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="public/index.css">
+
+                     <!-- /////////////*******////////// -->
+
     </head>
     <body>
-        <h1>  Weather search   </h1>
-        <div>
-            <form method="POST">
-                <input name="place" type="text" placeholder="place">
+        <div class="container-fluid bg-dark text-white top">
+            <h1>  Weather Nation</h1>
+        </div>
+       <div class="row">
+           <div class="w-50 mx-auto">
+           <img src="public/icon.png" alt="image">
+            <form action="\" method="POST">
+                <input  class="btn btn-outline-dark place" name="place" type="text" placeholder="place">
                 <br>
-                <button name="submit" type="submit" >search</button>
+                <button  class="btn btn-outline-danger search" name="submit" type="submit" >Search</button>
             </form>
+            </div>
         </div>
         
         <footer>
-            <br>
-            <table>
-                
-                <tr>
-
-                    <br>
-                    <hr>
-                    <h4>       @Copyright</h4>
-                    <th>        Vivek Vishal</th>
-                    <br>
-                </tr>
-                <tr>
-                    <td>@developer  </td>
-            
-                </tr>
-               <tr>
-                   <td>
-                    @programmer
-                   </td>
-               </tr>
-               <tr>
-                   <td>
-                       @compititive_coder
-                   </td>
-               </tr>
-            </table>
+            <hr>
+            <p>&copy;2020 Max_keviv</p>
+            <p>@developer</p>
         </footer>
     </body>
 
