@@ -41,7 +41,7 @@ https.get(url,function(response){
          weathers=JSON.parse(data);
         // console.log(weathers.weather)
         // console.log(weathers.main);
-
+        console.log(weathers)
         const temp=weathers.main.temp
         const icon=weathers.weather[0].icon
         const des=weathers.weather[0].main
@@ -71,5 +71,5 @@ app.post("/failure",function(req,res){
 })
 
 app.listen(process.env.PORT ||2000,function(){
-console.log("server at port 3000");
+console.log("server at port 2000");
 });

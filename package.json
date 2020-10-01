@@ -4,7 +4,7 @@
   "description": "project based on weather report",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node index.js"
   },
   "author": "max_keviv",
   "license": "ISC",
