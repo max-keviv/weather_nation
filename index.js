@@ -5,11 +5,11 @@ const app=express();
 const bodyParser=require("body-parser");
 // const request=require("request");
 const https=require("https");
-
+const ejs = require("ejs");
             ///////////////////////////
                 // use of module
 // app.use(express.static("public"));
-
+app.set('view engine','ejs');
 app.use("/", express.static(__dirname));//working
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 var weathers=new Object();
 app.get("/",function(req,res){
    
-    res.sendFile(__dirname+"/index.html");
-    
+    // res.sendFile(__dirname+"/index.html");
+    res.render("search");
 });
 
 
@@ -33,7 +33,8 @@ https.get(url,function(response){
     if(response.statusCode!=200)
     {
         console.log("error");
-        res.sendFile(__dirname+"/failure.html");
+        // res.sendFile(__dirname+"/failure.html");
+        res.render("error");
     }
     else
     {
@@ -49,7 +50,7 @@ https.get(url,function(response){
         const img_url='http://openweathermap.org/img/wn/'+icon+'@4x.png'
     res.write("<h1>weather forcast at "+pl+" </h1>") 
     var arr=main.split(",");
-
+    
     res.write("<h3><i> the temp. is  "+temp+" c </i></h3>");
     for(var i=1;i<arr.length;i++)
     {
