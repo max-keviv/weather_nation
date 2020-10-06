@@ -43,24 +43,25 @@ https.get(url,function(response){
         // console.log(weathers.weather)
         // console.log(weathers.main);
         console.log(weathers)
-        const temp=weathers.main.temp
-        const icon=weathers.weather[0].icon
-        const des=weathers.weather[0].main
-        const main=JSON.stringify(weathers.main);
-        const img_url='http://openweathermap.org/img/wn/'+icon+'@4x.png'
-    res.write("<h1>weather forcast at "+pl+" </h1>") 
-    var arr=main.split(",");
+    //     const temp=weathers.main.temp
+    //     const icon=weathers.weather[0].icon
+    //     const des=weathers.weather[0].main
+    //     const main=JSON.stringify(weathers.main);
+    //     const img_url='http://openweathermap.org/img/wn/'+icon+'@4x.png'
+    // res.write("<h1>weather forcast at "+pl+" </h1>") 
+    // var arr=main.split(",");
     
-    res.write("<h3><i> the temp. is  "+temp+" c </i></h3>");
-    for(var i=1;i<arr.length;i++)
-    {
-        res.write("<h4><i>"+arr[i]+"</i></h4>");
+    // res.write("<h3><i> the temp. is  "+temp+" c </i></h3>");
+    // for(var i=1;i<arr.length;i++)
+    // {
+    //     res.write("<h4><i>"+arr[i]+"</i></h4>");
         
-    }
-    res.write("<h3><i> the weather is like " +des+" </i></h3>");
-    res.write("<img src="+img_url+">");
-     res.send();
+    // }
+    // res.write("<h3><i> the weather is like " +des+" </i></h3>");
+    // res.write("<img src="+img_url+">");
+    //  res.send();
     })
+    res.render('render',{weathers:weathers});
 }
 })
 
