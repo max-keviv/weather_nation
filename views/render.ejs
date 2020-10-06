@@ -1,0 +1,37 @@
+<%- include("page") -%>
+<div class="cardshow">
+    <div class="card">
+    <div class="weather-img">   
+    <img src='http://openweathermap.org/img/wn/<%=weathers.weather[0].icon%>@4x.png'>
+    </div>
+    <h1>
+        <b><%= weathers.name %></b><hr>
+    </h1>
+
+    <h4><%=weathers.weather[0].main%></h4>
+    <h4><%=weathers.weather[0].description%></h4>
+    <% for (const [key, value] of Object.entries(weathers.main)) { %>
+        <p><%=key+" - "+value%></p>
+    <%  }       %>
+    <%   if(weathers.wind) {      %>
+    <h4>
+        Wind
+    </h4>
+    <hr>
+    <% for (const [key, value] of Object.entries(weathers.wind)) { %>
+        <p><%=key+" - "+value%></p>
+    <%  }       %>
+    <%  }       %>
+    <%   if(weathers.rain) {      %>
+    <h4>
+        Rain
+    </h4>
+    <hr>
+    <% for (const [key, value] of Object.entries(weathers.wind)) { %>
+        <p><%=key+" - "+value%></p>
+    <%  }       %>
+    <%  }       %>
+    </div>
+</div>
+
+<%- include("end") -%>
