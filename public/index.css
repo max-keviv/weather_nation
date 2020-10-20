@@ -11,36 +11,6 @@
     font-family: 'Montserrat', sans-serif;
 
 }
-.cardshow{
-/* text-align: center; */
-font-family: 'Montserrat', sans-serif;
-padding: 3% 2% 0% 2%;
-}
-.card{
- /* text-align: center; */
- border: transparent thin 1px ;
- margin: 2% 5% 0% 5%;
- min-width: 450px;
- min-height: 600px;
- padding: 0% 0% 1% 3%;
-}
-
-.weather-img{
-    position: absolute;
-    padding-top: 10%;
-    /* bottom: 10%; */
-    left: 80%;
-}
-
-h1{
-    text-align: center;
-    /* left: 50%; */
-    /* margin-left: 10%; */
-}
-
-.pad{
-    padding: 0% 0% 0% 30%;
-}
 
 .inside{
 margin: 7% 0 0 30%;
@@ -59,44 +29,4 @@ footer{
 hr{
     width: 30%;
 
-}
- @media (min-width:1200px){
-     
- }
- @media  (max-width: 1000px) {
-    
-    .weather-img{
-        left: 63%;
-    }}
-
-    @media  (max-width: 500px) {
-        .weather-img{
-            display: 60%;
-            
-        }
-        img{
-            max-width: 140px;
-            max-height: 160px;
-        }
-     .cardshow{  
-        font-family: 'Montserrat', sans-serif;
-        /* /* min-width: 100px; */
-        padding: 0%;
-        margin: 0%;
-        }
-    .card{
-        min-width: 100px;
-        padding: 0%;
-        margin: 0%;
-    }
-  } 
-  @media  (max-width: 400px) {
-    .weather-img{
-        display: 58%;
-        
-    }
-    img{
-        max-width: 140px;
-        max-height: 160px;
-    }
 }
