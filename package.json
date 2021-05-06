@@ -4,12 +4,31 @@
   "description": "project based on weather report",
   "main": "index.js",
   "scripts": {
-    "run": "node index.js"
+    "run": "node index.js",
+    "build": "npx webpack",
+    "start:dev": "webpack-dev-server",   "build:server:once": "cross-env NODE_ENV=development webpack --config webpack.config.server.js",     "dev:server": "npm run build:server:once && npm-run-all --parallel nodemon:prod watch:server",     "watch:server": "NODE_ENV=development NODE_ENV=development webpack --config webpack.config.server.js --watch",     "nodemon:prod": "cross-env NODE_ENV=development node-dev server.prod.js" 
   },
   "author": "max_keviv",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "babel-loader": "^8.2.2",
     "ejs": "^3.1.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "http-browserify": "^1.7.0",
+    "https": "^1.0.0",
+    "https-browserify": "^1.0.0",
+    "json-loader": "^0.5.7",
+    "node-jose-browserify": "^1.1.14",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-node-externals": "^2.5.2",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1"
   }
 }
