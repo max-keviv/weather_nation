@@ -28,7 +28,7 @@ app.post("/",function(req,res){
 var pl=req.body.place;
 const url="https://api.openweathermap.org/data/2.5/weather?q="+pl+"&units=metric&appid=ce3dc7325abe309dd92f8685aafd176f";
 
-https.get(url,function(response){
+https.get(url,async function(response){
     console.log(response.statusCode);
     if(response.statusCode!=200)
     {
@@ -38,8 +38,9 @@ https.get(url,function(response){
     }
     else
     {
-    response.on("data",function(data){
-         weathers=JSON.parse(data);
+    await function(){ 
+         response.on("data", function(data){
+     weathers = JSON.parse(data);
         // console.log(weathers.weather)
         // console.log(weathers.main);
         console.log(weathers)
@@ -61,7 +62,8 @@ https.get(url,function(response){
     // res.write("<img src="+img_url+">");
     //  res.send();
     })
-    res.render('render',{weathers:weathers});
+}()
+   await res.render('render',{weathers:weathers});
 }
 })
 
